@@ -1,4 +1,4 @@
-import org.openqa.selenium.chrome.ChromeDriver;
+import extensions.DriverFactory;
 import page_object_models.HomePage;
 import org.junit.*;
 import io.qameta.allure.junit4.DisplayName;
@@ -15,7 +15,7 @@ public class ConstructorTest {
 
     @Before
     public void setup() {
-        driver = new ChromeDriver();
+        driver = DriverFactory.getBrowser();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         homePage = new HomePage(driver);
         driver.get(homePage.getUrl());

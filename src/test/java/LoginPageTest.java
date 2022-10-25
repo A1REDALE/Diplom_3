@@ -1,7 +1,7 @@
+import extensions.DriverFactory;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.*;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import page_object_models.*;
 
 import java.time.Duration;
@@ -17,7 +17,7 @@ public class LoginPageTest {
 
     @Before
     public void setup() {
-        driver = new ChromeDriver();
+        driver = DriverFactory.getBrowser();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         homePage = new HomePage(driver);
         driver.get(homePage.getUrl());
@@ -76,7 +76,7 @@ public class LoginPageTest {
     @DisplayName("вход через кнопку в форме восстановления пароля")
     public void forgotPageSignInLinkCheck() {
         loginPage = new LoginPage(driver);
-        ForgotPasswordPage forgotPasswordPage = new ForgotPasswordPage(driver);
+        PasswordPage forgotPasswordPage = new PasswordPage(driver);
         driver.get(forgotPasswordPage.getUrl());
         forgotPasswordPage.waitRestorePasswordButton();
         forgotPasswordPage.clickSignInLink();

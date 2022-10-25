@@ -6,7 +6,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class ForgotPasswordPage {
+public class PasswordPage {
     WebDriver driver;
     public static final String URL = "https://stellarburgers.nomoreparties.site/forgot-password";
     // локатор для кнопки Восстановить
@@ -14,7 +14,7 @@ public class ForgotPasswordPage {
     // локатор для ссылки Войти
     public final By signInLink = By.linkText("Войти");
 
-    public ForgotPasswordPage(WebDriver driver) {
+    public PasswordPage(WebDriver driver) {
         this.driver = driver;
     }
 

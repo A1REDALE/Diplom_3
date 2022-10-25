@@ -1,4 +1,4 @@
-import org.openqa.selenium.chrome.ChromeDriver;
+import extensions.DriverFactory;
 import page_object_models.*;
 import org.junit.*;
 import io.qameta.allure.junit4.DisplayName;
@@ -11,14 +11,13 @@ import static org.junit.Assert.assertEquals;
 public class TransitionsTest {
     private WebDriver driver;
     private HomePage homePage;
-    private final String email = "ESstorchak@yandex.ru";
+    private final String email = "EStorchak@yandex.ru";
     private final String password = "123456";
 
     @Before
     public void setup() {
-        driver = new ChromeDriver();
+        driver = DriverFactory.getBrowser();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-
         homePage = new HomePage(driver);
         driver.get(homePage.getUrl());
         driver.manage().window().maximize();

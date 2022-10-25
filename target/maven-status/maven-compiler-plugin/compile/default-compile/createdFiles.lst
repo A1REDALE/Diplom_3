@@ -1,0 +1,6 @@
+page_object_models\RegistrationPage.class
+extensions\DriverFactory.class
+page_object_models\HomePage.class
+page_object_models\ProfilePage.class
+page_object_models\PasswordPage.class
+page_object_models\LoginPage.class

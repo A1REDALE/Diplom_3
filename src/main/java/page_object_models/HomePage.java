@@ -72,7 +72,7 @@ public class HomePage {
 
     public void clickBuns() {
         WebElement element = driver.findElement(bunsTab);
-        element.click();
+
     }
 
     public void clickSauces() {

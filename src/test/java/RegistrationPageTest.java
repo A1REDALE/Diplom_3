@@ -1,4 +1,5 @@
 
+import extensions.DriverFactory;
 import org.openqa.selenium.chrome.ChromeDriver;
 import page_object_models.*;
 import org.junit.*;
@@ -18,7 +19,7 @@ public class RegistrationPageTest {
 
     @Before
     public void setup() {
-        driver = new ChromeDriver();
+        driver = DriverFactory.getBrowser();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         registrationPage = new RegistrationPage(driver);
         driver.get(registrationPage.getUrl());
