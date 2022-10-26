@@ -1,5 +1,6 @@
 package page_object_models;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -25,6 +26,7 @@ public class RegistrationPage {
     public RegistrationPage(WebDriver driver) {
         this.driver = driver;
     }
+
     public String getUrl() {
         return URL;
     }
@@ -34,21 +36,25 @@ public class RegistrationPage {
                 .until(ExpectedConditions.visibilityOfElementLocated(regButton));
     }
 
+    @Step("Ввод имени")
     public void sendKeysName(String name) {
         WebElement element = driver.findElement(nameInput);
         element.sendKeys(name);
     }
 
+    @Step("Ввод электронной почты")
     public void sendKeysEmail(String email) {
         WebElement element = driver.findElement(emailInput);
         element.sendKeys(email);
     }
 
+    @Step("Ввод пароля")
     public void sendKeysPassword(String password) {
         WebElement element = driver.findElement(passwordInput);
         element.sendKeys(password);
     }
 
+    @Step("Нажатие кнопки Зарегистрироваться")
     public void clickRegButton() {
         WebElement element = driver.findElement(regButton);
         element.click();
@@ -59,11 +65,13 @@ public class RegistrationPage {
                 .until(ExpectedConditions.visibilityOfElementLocated(passwordError));
     }
 
+    @Step("Получение ошибки Некорректный пароль")
     public String getError() {
         WebElement element = driver.findElement(passwordError);
         return element.getText();
     }
 
+    @Step("Нажатие текстовой ссылки Войти")
     public void clickSignInLink() {
         WebElement element = driver.findElement(signInLink);
         element.click();

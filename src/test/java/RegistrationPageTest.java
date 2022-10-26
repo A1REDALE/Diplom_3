@@ -1,6 +1,4 @@
-
 import extensions.DriverFactory;
-import org.openqa.selenium.chrome.ChromeDriver;
 import page_object_models.*;
 import org.junit.*;
 import io.qameta.allure.Description;
@@ -36,7 +34,7 @@ public class RegistrationPageTest {
     @Description("Создаем аккаунт с паролем ,более 6 символов")
     public void checkRegistrationWithCorrectPassword() {
         LoginPage loginPage = new LoginPage(driver);
-        email = RandomStringUtils.randomAlphanumeric(10)+"@yandex.ru";
+        email = RandomStringUtils.randomAlphanumeric(10) + "@yandex.ru";
         password = RandomStringUtils.randomAlphanumeric(10);
         registrationPage.sendKeysName(name);
         registrationPage.sendKeysEmail(email);
@@ -49,7 +47,7 @@ public class RegistrationPageTest {
     @Test
     @Description("Создаем аккаунт с паролем менее 6 символов")
     public void checkRegistrationWithIncorrectPassword() {
-        email = RandomStringUtils.randomAlphanumeric(10)+"@yandex.ru";
+        email = RandomStringUtils.randomAlphanumeric(10) + "@yandex.ru";
         password = RandomStringUtils.randomAlphanumeric(5);
         registrationPage.sendKeysName(name);
         registrationPage.sendKeysEmail(email);

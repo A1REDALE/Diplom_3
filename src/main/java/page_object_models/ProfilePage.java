@@ -1,5 +1,6 @@
 package page_object_models;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -29,6 +30,7 @@ public class ProfilePage {
                 .until(ExpectedConditions.visibilityOfElementLocated(profileLink));
     }
 
+    @Step("Нажатие кнопки Выход")
     public void clickExitLink() {
         WebElement element = driver.findElement(exitButton);
         element.click();

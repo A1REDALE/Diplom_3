@@ -1,5 +1,6 @@
 package page_object_models;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -27,6 +28,7 @@ public class PasswordPage {
                 .until(ExpectedConditions.visibilityOfElementLocated(restorePasswordButton));
     }
 
+    @Step("Нажатие текстовой ссылки Войти")
     public void clickSignInLink() {
         WebElement element = driver.findElement(signInLink);
         element.click();

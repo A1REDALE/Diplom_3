@@ -12,7 +12,6 @@ public class ConstructorTest {
     private WebDriver driver;
     private HomePage homePage;
 
-
     @Before
     public void setup() {
         driver = DriverFactory.getBrowser();
@@ -31,7 +30,7 @@ public class ConstructorTest {
     @Test
     @DisplayName("Проверяем что работает переход к разделу «Булки»")
     public void checkSwitchToBunsTab() {
-        homePage.clickBuns();
+        homePage.chooseBuns();
         assertEquals("Булки", homePage.getTextActiveTab());
     }
 

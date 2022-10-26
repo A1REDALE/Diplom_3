@@ -1,5 +1,6 @@
 package page_object_models;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -23,20 +24,25 @@ public class LoginPage {
     public String getUrl() {
         return URL;
     }
+
     public void waitSignInButton() {
         new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.visibilityOfElementLocated(signInButton));
     }
 
+    @Step("Ввод почты")
     public void sendKeysEmail(String email) {
         WebElement element = driver.findElement(emailInput);
         element.sendKeys(email);
     }
 
+    @Step("Ввод пароля")
     public void sendKeysPassword(String password) {
         WebElement element = driver.findElement(passwordInput);
         element.sendKeys(password);
     }
+
+    @Step("Нажатие кнопки Войти")
     public void clickSignInButton() {
         WebElement element = driver.findElement(signInButton);
         element.click();

@@ -1,5 +1,6 @@
 package page_object_models;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -40,46 +41,54 @@ public class HomePage {
         new WebDriverWait(driver, Duration.ofSeconds(3))
                 .until(ExpectedConditions.visibilityOfElementLocated(signInButton));
     }
+
     public void waitForOrder() {
         new WebDriverWait(driver, Duration.ofSeconds(3))
                 .until(ExpectedConditions.visibilityOfElementLocated(orderButton));
     }
 
+    @Step("Создание заказа")
     public void clickConstructorLink() {
         WebElement element = driver.findElement(constructorLink);
         element.click();
     }
 
+    @Step("Нажатие Лого")
     public void clickLogo() {
         WebElement element = driver.findElement(constructorLink);
         element.click();
     }
 
+    @Step("Нажатие кнопки Подтверждение Заказа")
     public void clickSignInButton() {
         WebElement element = driver.findElement(signInButton);
         element.click();
     }
 
+    @Step("Нажатие кнопки Личный кабинет")
     public void clickAccountButton() {
         WebElement element = driver.findElement(accountButton);
         element.click();
     }
 
+    @Step("Получение текста названия активного класса ингредиентов")
     public String getTextActiveTab() {
         WebElement element = driver.findElement(activeTab);
         return element.getText();
     }
 
-    public void clickBuns() {
+    @Step("Выбор класса ингредиентов Булки")
+    public void chooseBuns() {
         WebElement element = driver.findElement(bunsTab);
-
     }
 
+    @Step("Выбор класса ингредиентов Соусы")
     public void clickSauces() {
         WebElement element = driver.findElement(saucesTab);
         element.click();
     }
 
+    @Step("Выбор класса ингредиентов Начинки")
     public void clickFillings() {
         WebElement element = driver.findElement(fillingsTab);
         element.click();
