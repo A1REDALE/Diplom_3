@@ -4,7 +4,6 @@ import org.junit.*;
 import io.qameta.allure.Description;
 import org.openqa.selenium.WebDriver;
 import org.apache.commons.lang3.RandomStringUtils;
-
 import java.time.Duration;
 
 import static org.junit.Assert.assertEquals;

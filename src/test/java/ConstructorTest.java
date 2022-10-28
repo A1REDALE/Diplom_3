@@ -3,7 +3,6 @@ import page_object_models.HomePage;
 import org.junit.*;
 import io.qameta.allure.junit4.DisplayName;
 import org.openqa.selenium.WebDriver;
-
 import java.time.Duration;
 
 import static org.junit.Assert.assertEquals;
